@@ -1,7 +1,30 @@
-make
-if [ ! -e text8 ]; then
-  wget http://mattmahoney.net/dc/text8.zip -O text8.gz
-  gzip -d text8.gz -f
+DATA_DIR=../data
+BIN_DIR=../bin
+SRC_DIR=../src
+
+TEXT_DATA=$DATA_DIR/text8
+ZIPPED_TEXT_DATA="${TEXT_DATA}.zip"
+VECTOR_DATA=$DATA_DIR/text8-vector.bin
+
+pushd ${SRC_DIR} && make; popd
+
+if [ ! -e $VECTOR_DATA ]; then
+    if [ ! -e $TEXT_DATA ]; then
+        if [ ! -e $ZIPPED_TEXT_DATA ]; then
+            wget http://mattmahoney.net/dc/text8.zip -O $ZIPPED_TEXT_DATA
+        fi
+        unzip $ZIPPED_TEXT_DATA
+        mv text8 $TEXT_DATA
+    fi
+
+echo -----------------------------------------------------------------------------------------------------
+echo -- Training vectors...
+
+time $BIN_DIR/word2gram -train $TEXT_DATA -output $VECTOR_DATA -ngram 2 -group 0 -hashbang 1 -cbow 0 -size 200 -window 10 -negative 0 -hs 1 -sample 1e-3 -threads 12 -binary 1 -min-count 0
+
 fi
-time ./word2gram -train text8 -output vectors.bin -ngram 2 -group 0 -hashbang 1 -cbow 0 -size 200 -window 10 -negative 0 -hs 1 -sample 1e-3 -threads 12 -binary 1 -min-count 0
-./distance vectors.bin
+
+echo -----------------------------------------------------------------------------------------------------
+echo -- distance...
+
+$BIN_DIR/distance $DATA_DIR/$VECTOR_DATA

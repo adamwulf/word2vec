@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		C55251481EF08005003C667A /* .placeholder */ = {isa = PBXFileReference; lastKnownFileType = text; path = .placeholder; sourceTree = "<group>"; };
+		C55251491EF08005003C667A /* compute-accuracy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "compute-accuracy"; sourceTree = "<group>"; };
+		C552514A1EF08005003C667A /* compute-accuracy-syntax */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "compute-accuracy-syntax"; sourceTree = "<group>"; };
+		C552514B1EF08005003C667A /* distance */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = distance; sourceTree = "<group>"; };
+		C552514C1EF08005003C667A /* word-analogy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "word-analogy"; sourceTree = "<group>"; };
+		C552514D1EF08005003C667A /* word2gram */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = word2gram; sourceTree = "<group>"; };
+		C552514E1EF08005003C667A /* word2phrase */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = word2phrase; sourceTree = "<group>"; };
+		C552514F1EF08005003C667A /* word2vec */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = word2vec; sourceTree = "<group>"; };
+		C55251511EF08005003C667A /* questions-phrases.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-phrases.txt"; sourceTree = "<group>"; };
+		C55251521EF08005003C667A /* questions-words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-words.txt"; sourceTree = "<group>"; };
+		C55251531EF08005003C667A /* text8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = text8; sourceTree = "<group>"; };
+		C55251541EF08005003C667A /* text8-phrases */ = {isa = PBXFileReference; lastKnownFileType = text; path = "text8-phrases"; sourceTree = "<group>"; };
+		C55251551EF08005003C667A /* text8-vector.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "text8-vector.bin"; sourceTree = "<group>"; };
+		C55251561EF08005003C667A /* vectors-phrase.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "vectors-phrase.bin"; sourceTree = "<group>"; };
+		C55251571EF08005003C667A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C55251581EF08005003C667A /* questions-phrases.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-phrases.txt"; sourceTree = "<group>"; };
+		C55251591EF08005003C667A /* questions-words-syntax.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-words-syntax.txt"; sourceTree = "<group>"; };
+		C552515A1EF08005003C667A /* questions-words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-words.txt"; sourceTree = "<group>"; };
+		C552515B1EF08005003C667A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C552515D1EF08005003C667A /* tooling.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = tooling.py; sourceTree = "<group>"; };
+		C552515F1EF08005003C667A /* demo-analogy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-analogy.sh"; sourceTree = "<group>"; };
+		C55251601EF08005003C667A /* demo-classes.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-classes.sh"; sourceTree = "<group>"; };
+		C55251611EF08005003C667A /* demo-ngram.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-ngram.sh"; sourceTree = "<group>"; };
+		C55251621EF08005003C667A /* demo-phrase-accuracy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-phrase-accuracy.sh"; sourceTree = "<group>"; };
+		C55251631EF08005003C667A /* demo-phrases.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-phrases.sh"; sourceTree = "<group>"; };
+		C55251641EF08005003C667A /* demo-word-accuracy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-word-accuracy.sh"; sourceTree = "<group>"; };
+		C55251651EF08005003C667A /* demo-word.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-word.sh"; sourceTree = "<group>"; };
+		C552516F1EF0806F003C667A /* compute-accuracy-syntax.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "compute-accuracy-syntax.c"; sourceTree = "<group>"; };
+		C55251701EF0806F003C667A /* compute-accuracy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "compute-accuracy.c"; sourceTree = "<group>"; };
+		C55251711EF0806F003C667A /* distance.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = distance.c; sourceTree = "<group>"; };
+		C55251721EF0806F003C667A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; usesTabs = 1; };
+		C55251731EF0806F003C667A /* ngram_tools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ngram_tools.c; sourceTree = "<group>"; };
+		C55251741EF0806F003C667A /* ngram_tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ngram_tools.h; sourceTree = "<group>"; };
+		C55251751EF0806F003C667A /* trainingThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trainingThread.c; sourceTree = "<group>"; };
+		C55251761EF0806F003C667A /* trainingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trainingThread.h; sourceTree = "<group>"; };
+		C55251771EF0806F003C667A /* vocab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vocab.c; sourceTree = "<group>"; };
+		C55251781EF0806F003C667A /* vocab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vocab.h; sourceTree = "<group>"; };
+		C55251791EF0806F003C667A /* word-analogy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "word-analogy.c"; sourceTree = "<group>"; };
+		C552517A1EF0806F003C667A /* word2gram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2gram.c; sourceTree = "<group>"; };
+		C552517B1EF0806F003C667A /* word2phrase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2phrase.c; sourceTree = "<group>"; };
+		C552517C1EF0806F003C667A /* word2vec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2vec.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		C55251281EF07FDC003C667A = {
+			isa = PBXGroup;
+			children = (
+				C55251501EF08005003C667A /* data */,
+				C55251571EF08005003C667A /* LICENSE */,
+				C55251581EF08005003C667A /* questions-phrases.txt */,
+				C55251591EF08005003C667A /* questions-words-syntax.txt */,
+				C552515A1EF08005003C667A /* questions-words.txt */,
+				C552515B1EF08005003C667A /* README.md */,
+				C552516E1EF0806F003C667A /* src */,
+				C552515C1EF08005003C667A /* script-tools */,
+				C552515E1EF08005003C667A /* scripts */,
+				C55251471EF08005003C667A /* bin */,
+			);
+			sourceTree = "<group>";
+		};
+		C55251471EF08005003C667A /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				C55251481EF08005003C667A /* .placeholder */,
+				C55251491EF08005003C667A /* compute-accuracy */,
+				C552514A1EF08005003C667A /* compute-accuracy-syntax */,
+				C552514B1EF08005003C667A /* distance */,
+				C552514C1EF08005003C667A /* word-analogy */,
+				C552514D1EF08005003C667A /* word2gram */,
+				C552514E1EF08005003C667A /* word2phrase */,
+				C552514F1EF08005003C667A /* word2vec */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		C55251501EF08005003C667A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C55251511EF08005003C667A /* questions-phrases.txt */,
+				C55251521EF08005003C667A /* questions-words.txt */,
+				C55251531EF08005003C667A /* text8 */,
+				C55251541EF08005003C667A /* text8-phrases */,
+				C55251551EF08005003C667A /* text8-vector.bin */,
+				C55251561EF08005003C667A /* vectors-phrase.bin */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		C552515C1EF08005003C667A /* script-tools */ = {
+			isa = PBXGroup;
+			children = (
+				C552515D1EF08005003C667A /* tooling.py */,
+			);
+			path = "script-tools";
+			sourceTree = "<group>";
+		};
+		C552515E1EF08005003C667A /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				C552515F1EF08005003C667A /* demo-analogy.sh */,
+				C55251601EF08005003C667A /* demo-classes.sh */,
+				C55251611EF08005003C667A /* demo-ngram.sh */,
+				C55251621EF08005003C667A /* demo-phrase-accuracy.sh */,
+				C55251631EF08005003C667A /* demo-phrases.sh */,
+				C55251641EF08005003C667A /* demo-word-accuracy.sh */,
+				C55251651EF08005003C667A /* demo-word.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		C552516E1EF0806F003C667A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C55251721EF0806F003C667A /* makefile */,
+				C552516F1EF0806F003C667A /* compute-accuracy-syntax.c */,
+				C55251701EF0806F003C667A /* compute-accuracy.c */,
+				C55251711EF0806F003C667A /* distance.c */,
+				C55251731EF0806F003C667A /* ngram_tools.c */,
+				C55251741EF0806F003C667A /* ngram_tools.h */,
+				C55251751EF0806F003C667A /* trainingThread.c */,
+				C55251761EF0806F003C667A /* trainingThread.h */,
+				C55251771EF0806F003C667A /* vocab.c */,
+				C55251781EF0806F003C667A /* vocab.h */,
+				C55251791EF0806F003C667A /* word-analogy.c */,
+				C552517A1EF0806F003C667A /* word2gram.c */,
+				C552517B1EF0806F003C667A /* word2phrase.c */,
+				C552517C1EF0806F003C667A /* word2vec.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		C552516A1EF08046003C667A /* word2vec */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = C552516B1EF08046003C667A /* Build configuration list for PBXLegacyTarget "word2vec" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/adamwulf/Documents/Code/kiwi/word2vec/src;
+			dependencies = (
+			);
+			name = word2vec;
+			passBuildSettingsInEnvironment = 1;
+			productName = word2vec;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		C55251291EF07FDC003C667A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				TargetAttributes = {
+					C552516A1EF08046003C667A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MU27A4SCKC;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C552512C1EF07FDC003C667A /* Build configuration list for PBXProject "word2vec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C55251281EF07FDC003C667A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C552516A1EF08046003C667A /* word2vec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		C552512D1EF07FDC003C667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C552512E1EF07FDC003C667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		C552516C1EF08046003C667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MU27A4SCKC;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C552516D1EF08046003C667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MU27A4SCKC;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C552512C1EF07FDC003C667A /* Build configuration list for PBXProject "word2vec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C552512D1EF07FDC003C667A /* Debug */,
+				C552512E1EF07FDC003C667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C552516B1EF08046003C667A /* Build configuration list for PBXLegacyTarget "word2vec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C552516C1EF08046003C667A /* Debug */,
+				C552516D1EF08046003C667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C55251291EF07FDC003C667A /* Project object */;
+}

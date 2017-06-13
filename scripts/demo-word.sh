@@ -11,7 +11,6 @@ VECTOR_DATA=$DATA_DIR/text8-vector.bin
 pushd ${SRC_DIR} && make; popd
 
 if [ ! -e $VECTOR_DATA ]; then
-  
   if [ ! -e $TEXT_DATA ]; then
     if [ ! -e $ZIPPED_TEXT_DATA ]; then
 	    wget http://mattmahoney.net/dc/text8.zip -O $ZIPPED_TEXT_DATA
