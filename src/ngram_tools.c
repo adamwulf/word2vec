@@ -30,7 +30,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 	char grama[ngram+3];
 	int hash = 0;
 	char word[max_string];
-	int i,start,end,lenWord, offset;
+	int i,start=0,end=0,lenWord, offset;
 	int *hashset;
 	long long unsigned int cptWord=0;
 	long long int indGram;

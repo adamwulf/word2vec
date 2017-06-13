@@ -22,9 +22,7 @@
 		C55251551EF08005003C667A /* text8-vector.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "text8-vector.bin"; sourceTree = "<group>"; };
 		C55251561EF08005003C667A /* vectors-phrase.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "vectors-phrase.bin"; sourceTree = "<group>"; };
 		C55251571EF08005003C667A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		C55251581EF08005003C667A /* questions-phrases.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-phrases.txt"; sourceTree = "<group>"; };
-		C55251591EF08005003C667A /* questions-words-syntax.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-words-syntax.txt"; sourceTree = "<group>"; };
-		C552515A1EF08005003C667A /* questions-words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "questions-words.txt"; sourceTree = "<group>"; };
+		C55251591EF08005003C667A /* questions-words-syntax.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "questions-words-syntax.txt"; path = "../questions-words-syntax.txt"; sourceTree = "<group>"; };
 		C552515B1EF08005003C667A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C552515D1EF08005003C667A /* tooling.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = tooling.py; sourceTree = "<group>"; };
 		C552515F1EF08005003C667A /* demo-analogy.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-analogy.sh"; sourceTree = "<group>"; };
@@ -54,15 +52,12 @@
 		C55251281EF07FDC003C667A = {
 			isa = PBXGroup;
 			children = (
-				C55251501EF08005003C667A /* data */,
 				C55251571EF08005003C667A /* LICENSE */,
-				C55251581EF08005003C667A /* questions-phrases.txt */,
-				C55251591EF08005003C667A /* questions-words-syntax.txt */,
-				C552515A1EF08005003C667A /* questions-words.txt */,
 				C552515B1EF08005003C667A /* README.md */,
 				C552516E1EF0806F003C667A /* src */,
-				C552515C1EF08005003C667A /* script-tools */,
+				C55251501EF08005003C667A /* data */,
 				C552515E1EF08005003C667A /* scripts */,
+				C552515C1EF08005003C667A /* script-tools */,
 				C55251471EF08005003C667A /* bin */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C55251511EF08005003C667A /* questions-phrases.txt */,
+				C55251591EF08005003C667A /* questions-words-syntax.txt */,
 				C55251521EF08005003C667A /* questions-words.txt */,
 				C55251531EF08005003C667A /* text8 */,
 				C55251541EF08005003C667A /* text8-phrases */,
