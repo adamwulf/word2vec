@@ -3,7 +3,9 @@ word2vec
 
 Original from https://code.google.com/p/word2vec/
 
-I've copied it to a github project so I can apply and track community patches for my needs (starting with capability for Mac OS X compilation).
+[I've copied it](https://github.com/dav/word2vec)to a github project so I can apply and track community patches for my needs (starting with capability for Mac OS X compilation).
+
+Tools for computing distributed represention of words (and Grams) included from the [cedias](https://github.com/cedias/word2vec) repo.
 
 - ***makefile and some source has been modified for Mac OS X compilation*** See https://code.google.com/p/word2vec/issues/detail?id=1#c5
 - ***memory patch for word2vec has been applied*** See https://code.google.com/p/word2vec/issues/detail?id=2
