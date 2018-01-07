@@ -24,6 +24,13 @@
 			remoteGlobalIDString = C5C903422001E6AB00F5B973;
 			remoteInfo = Word2Vec;
 		};
+		C5C903662001FE8F00F5B973 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55251291EF07FDC003C667A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C552516A1EF08046003C667A;
+			remoteInfo = word2vec;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -291,6 +298,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C5C903672001FE8F00F5B973 /* PBXTargetDependency */,
 			);
 			name = Word2Vec;
 			productName = Word2Vec;
@@ -403,6 +411,11 @@
 			isa = PBXTargetDependency;
 			target = C5C903422001E6AB00F5B973 /* Word2Vec */;
 			targetProxy = C5C9034D2001E6AB00F5B973 /* PBXContainerItemProxy */;
+		};
+		C5C903672001FE8F00F5B973 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C552516A1EF08046003C667A /* word2vec */;
+			targetProxy = C5C903662001FE8F00F5B973 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

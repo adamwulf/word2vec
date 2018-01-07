@@ -1,5 +1,4 @@
 #define MAX_STRING 100
-#define MAX_SENTENCE_LENGTH 1000
 #define MAX_CODE_LENGTH 40
 #include "vocab.h"
 #include "ngram_tools.h"
@@ -116,7 +115,7 @@ void ReadWordHashbang(char *word, FILE *fin) {
 	word[a] = '\0';
 
  	//adding #word#
-	a = strlen(word); //'\0'
+	a = (int) strlen(word); //'\0'
 	word[a] = '#';
 	a++;
 	word[a] = '\0';
@@ -142,7 +141,7 @@ int GetWordHash(vocabulary* voc, char *word) {
 	}
 
 	hash = hash % voc->vocab_hash_size;
-	return hash;
+	return (int) hash;
 }
 
 /*free the vocab structure*/ //TODO
@@ -198,7 +197,7 @@ int ReadWordIndex(vocabulary* voc, FILE *fin) {
 /* Adds a word to the vocabulary
 	Returns the vocabulary size */
 int AddWordToVocab(vocabulary* voc, char *word) {
-	unsigned int hash, length = strlen(word) + 1;
+	unsigned int hash, length = (int) strlen(word) + 1;
 
 	if (length > MAX_STRING)
 		length = MAX_STRING;
@@ -221,13 +220,13 @@ int AddWordToVocab(vocabulary* voc, char *word) {
 	while (voc->vocab_hash[hash] != -1)
 		hash = (hash + 1) % voc->vocab_hash_size;
 
-	voc->vocab_hash[hash] = voc->vocab_size - 1;
-	return voc->vocab_size - 1;
+	voc->vocab_hash[hash] = (int) voc->vocab_size - 1;
+	return (int) voc->vocab_size - 1;
 }
 
 /* Used for sorting by word counts */
 int VocabCompare(const void *a, const void *b) {
-    return ((struct vocab_word *)b)->cn - ((struct vocab_word *)a)->cn;
+    return (int) (((struct vocab_word *)b)->cn - ((struct vocab_word *)a)->cn);
 }
 
 /* Sorts the vocabulary by frequency using word counts*/
@@ -262,7 +261,7 @@ void SortVocab(vocabulary* voc, int min_count) {
 			while (voc->vocab_hash[hash] != -1)
 				hash = (hash + 1) % voc->vocab_hash_size;
 
-			voc->vocab_hash[hash] = a;
+			voc->vocab_hash[hash] = (int) a;
 			voc->train_words += voc->vocab[a].cn;
 		}
 	}
@@ -418,7 +417,7 @@ long long LearnNGramFromTrainFile(vocabulary* voc, char* train_file,int min_coun
 		else
 			ReadWord(word,fin);
 
-		lenWord = strlen(word);
+		lenWord = (int) strlen(word);
 
 		if(lenWord<=ngram){ //word smaller or equal to ngram var.
 			searchAndAddToVocab(voc,word);
@@ -590,11 +589,11 @@ void CreateBinaryTree(vocabulary* voc) {
 		}
 
 		voc->vocab[a].codelen = i;
-		voc->vocab[a].point[0] = voc->vocab_size - 2;
+		voc->vocab[a].point[0] = (int) voc->vocab_size - 2;
 
 		for (b = 0; b < i; b++) {
 			voc->vocab[a].code[i - b - 1] = code[b];
-			voc->vocab[a].point[i - b] = point[b] - voc->vocab_size;
+			voc->vocab[a].point[i - b] = (int) (point[b] - voc->vocab_size);
 		}
 	}
 	free(count);

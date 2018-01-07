@@ -1,7 +1,7 @@
 #ifndef TRAIN_THREADS
 #define TRAIN_THREADS
 
-#define MAX_SENTENCE_LENGTH 100
+#define MAX_SENTENCE_LENGTH 1000
 #define MAX_CODE_LENGTH 40
 
 #include <stdlib.h>

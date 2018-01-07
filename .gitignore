@@ -1,5 +1,6 @@
 wikipedia
 data/*
+original/bin/*
 bin/*
 src/compute-accuracy
 src/distance

@@ -397,7 +397,7 @@ void *TrainCBOWModelThreadGram(void *arg) {
 					i = 0;
 				}
 
-				end = getGrams(wordToGram,gram,i, ngram, overlap, position,hashbang);
+				end = (int) getGrams(wordToGram,gram,(int) i, ngram, overlap, position,hashbang);
 
 				if(end == -1)
 					word = SearchVocab(voc,wordToGram);
@@ -896,7 +896,7 @@ void *TrainSKIPModelThreadGram(void *arg) {
 					i = 0;
 				}
 
-				end = getGrams(wordToGram,gram,i, ngram, overlap, position,hashbang);
+				end = getGrams(wordToGram,gram,(int) i, ngram, overlap, position,hashbang);
 
 				if(end == -1)
 					word = SearchVocab(voc,wordToGram);

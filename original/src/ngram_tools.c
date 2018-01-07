@@ -102,7 +102,8 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 	fprintf(fo, "\n");
 
 
-	hash = GetWordHash(voc,"</s>");
+    char strend[] = "</s>";
+	hash = GetWordHash(voc,strend);
 	hashset[hash] = 1;
 	
 	cptWord=1;
@@ -124,7 +125,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 		for(i=0;i<layer1_size;i++) 
 			wordVec[i] = 0;
 
-		lenWord = strlen(word);
+		lenWord = (int) strlen(word);
 
 		if(hashset[hash] != -1){
 			skipCpt++;
@@ -139,7 +140,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 				indGram = SearchVocab(voc,grama);
 				//printf("word:%s, gram:%s, ind:%lld\n",word,grama,indGram );
 				if(indGram > -1)
-					offset = indGram * layer1_size;
+					offset = (int) indGram * layer1_size;
 				else
 				{
 					unexistCpt++;
@@ -162,7 +163,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 						truncGram(syn0, layer1_size,ngram,offset,wordVec,lenWord,gramCpt);
 						break;
 					case 5:
-						sumFreqGram(syn0, layer1_size,offset,wordVec,voc->vocab[indGram].cn);
+						sumFreqGram(syn0, layer1_size,offset,wordVec,(int) voc->vocab[indGram].cn);
 				}
 
 				gramCpt++;
@@ -183,7 +184,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 
 			if(indGram > -1){
 
-				offset = indGram * layer1_size;
+				offset = (int) indGram * layer1_size;
 				for (i=0; i < layer1_size;i++)
 				{
 					wordVec[i]+=syn0[offset+i];
@@ -239,8 +240,8 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 void addGramPosition(char* word, char * gram, int size, int index, int position, int overlap,int hashbang){
 	int i;
 	char num[3];
-	int lenWord = strlen(word);
-	int lenGram = strlen(gram);
+	int lenWord = (int) strlen(word);
+	int lenGram = (int) strlen(gram);
 	int lastIndex;
 
 	if(overlap)
@@ -310,7 +311,7 @@ void addGramPosition(char* word, char * gram, int size, int index, int position,
 }
 
 int getGrams(char* word, char* gram, int index, int size,int overlap,int position,int hashbang){
-	int lenWord = strlen(word);
+	int lenWord = (int) strlen(word);
 	int lastIndex;
 
 	if(overlap)

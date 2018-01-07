@@ -76,7 +76,7 @@ void InitUnigramTable(vocabulary * voc) {
 		}
 
 		if (i >= voc->vocab_size)
-			i = voc->vocab_size - 1;
+			i = (int) voc->vocab_size - 1;
 		}
 }
 
@@ -161,13 +161,13 @@ void TrainModel(vocabulary* voc) {
 			sample,
 			(&word_count_actual),
 			table,
-			a,
+			(int) a,
 			num_threads,
-			file_size,
+			(int) file_size,
 			MAX_STRING,
 			EXP_TABLE_SIZE,
 			0,
-			layer1_size,
+			(int) layer1_size,
 			window,
 			MAX_EXP,
 			hs,
@@ -198,7 +198,7 @@ void TrainModel(vocabulary* voc) {
 
 	if (classes == 0) {
 		// Save the word vectors
-		fprintf(fo, "%lld %d\n", voc->vocab_size, layer1_size);
+		fprintf(fo, "%lld %d\n", voc->vocab_size, (int) layer1_size);
 		for (a = 0; a < voc->vocab_size; a++) {
 			fprintf(fo, "%s ", voc->vocab[a].word);
 
@@ -213,7 +213,7 @@ void TrainModel(vocabulary* voc) {
 		}
 	} else {
 		// Run K-means on the word vectors
-		int clcn = classes, iter = 10, closeid;
+		int clcn = (int) classes, iter = 10, closeid;
 		int *centcn = (int *)malloc(classes * sizeof(int));
 		int *cl = (int *)calloc(voc->vocab_size, sizeof(int));
 		real closev, x;
@@ -260,7 +260,7 @@ void TrainModel(vocabulary* voc) {
 
 					if (x > closev) {
 						closev = x;
-						closeid = d;
+						closeid = (int) d;
 					}
 				}
 				cl[c] = closeid;
