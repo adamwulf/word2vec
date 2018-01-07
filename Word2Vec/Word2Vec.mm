@@ -37,6 +37,8 @@ extern "C" {
 -(BOOL) train{
     if(![self trainFile] || ![self outputFile]){
         @throw [NSException exceptionWithName:@"Word2VecException" reason:@"Both trainFile and outputFile are required." userInfo:nil];
+    } else if(![[NSFileManager defaultManager] fileExistsAtPath:[[self trainFile] path]]){
+        @throw [NSException exceptionWithName:@"Word2VecException" reason:@"trainFile does not exist." userInfo:nil];
     }
     
     return [Word2Vec trainwithCorpusFile:[self trainFile]
@@ -81,7 +83,17 @@ extern "C" {
     
     char const *trainFilePath = [manager fileSystemRepresentationWithPath:trainFile.path];
     char const *outputFilePath = [manager fileSystemRepresentationWithPath:outputFile.path];
+    
+    if(strlen(trainFilePath) > MAX_STRING){
+        printf("ERROR: trainFilePath is longer than %d!\n", MAX_STRING);
+        exit(1);
+    }
 
+    if(strlen(outputFilePath) > MAX_STRING){
+        printf("ERROR: outputFilePath is longer than %d!\n", MAX_STRING);
+        exit(1);
+    }
+    
     // check for MAX_STRING
     strcpy(train_file, trainFilePath);
     strcpy(output_file, outputFilePath);

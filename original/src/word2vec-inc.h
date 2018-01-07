@@ -8,7 +8,7 @@
 #ifndef word2vec_h
 #define word2vec_h
 
-#define MAX_STRING 100
+#define MAX_STRING 1000
 #define MAX_EXP 6
 
 extern int EXP_TABLE_SIZE;

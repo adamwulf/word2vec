@@ -39,4 +39,6 @@ FOUNDATION_EXPORT const unsigned char Word2VecVersionString[];
 
 -(instancetype _Nonnull ) initWithTrainFile:(NSURL*_Nonnull)trainFile andOutputFile:(NSURL*_Nonnull)outputFile;
 
+-(BOOL) train;
+
 @end

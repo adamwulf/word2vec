@@ -19,7 +19,7 @@
 - (void)setUp {
     [super setUp];
     model = [[Word2Vec alloc] init];
-    NSURL* binURL = [[NSBundle mainBundle] URLForResource:@"out.bin" withExtension:nil];
+    NSURL* binURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"out.bin" withExtension:nil];
     [model setOutputFile:binURL];
 }
 
@@ -38,16 +38,23 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void) testTrain{
+    NSArray<NSString *> * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
+    NSString* documentsDirectory = paths[0];
+    NSURL *gooURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"pg2701" withExtension:@"txt"];
+    XCTAssertNotNil(gooURL);
+    
+    NSURL *url = [[NSURL fileURLWithPath:documentsDirectory] URLByAppendingPathComponent:@"out.bin"];
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+    XCTAssertFalse(exists);
+    
+    [model setTrainFile:gooURL];
+    [model setOutputFile:url];
+    [model train];
+
+    exists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+    XCTAssertTrue(exists);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 @end

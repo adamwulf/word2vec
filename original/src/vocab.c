@@ -1,4 +1,4 @@
-#define MAX_STRING 100
+#define MAX_STRING 1000
 #define MAX_CODE_LENGTH 40
 #include "vocab.h"
 #include "ngram_tools.h"
