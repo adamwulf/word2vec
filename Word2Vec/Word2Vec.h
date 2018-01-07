@@ -41,4 +41,10 @@ FOUNDATION_EXPORT const unsigned char Word2VecVersionString[];
 
 -(BOOL) train;
 
+- (NSDictionary <NSString *, NSNumber *>  * _Nullable)closestToWord:(NSString * _Nonnull) word
+                                                    numberOfClosest:(NSNumber * _Nullable) numberOfClosest;
+
+- (NSDictionary <NSString *, NSNumber *>  * _Nullable)analogyToPhrase:(NSString * _Nonnull) phrase
+                                                      numberOfClosest:(NSNumber * _Nullable) numberOfClosest;
+
 @end
