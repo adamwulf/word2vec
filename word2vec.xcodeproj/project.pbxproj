@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		C543A9FC1EF1CE4F005EDECC /* simpledata.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simpledata.txt; sourceTree = "<group>"; };
+		C543A9FD1EF1CE6B005EDECC /* demo-simple.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "demo-simple.sh"; sourceTree = "<group>"; };
 		C55251481EF08005003C667A /* .placeholder */ = {isa = PBXFileReference; lastKnownFileType = text; path = .placeholder; sourceTree = "<group>"; };
 		C55251491EF08005003C667A /* compute-accuracy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "compute-accuracy"; sourceTree = "<group>"; };
 		C552514A1EF08005003C667A /* compute-accuracy-syntax */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "compute-accuracy-syntax"; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 				C552516E1EF0806F003C667A /* src */,
 				C55251501EF08005003C667A /* data */,
 				C552515E1EF08005003C667A /* scripts */,
-				C552515C1EF08005003C667A /* script-tools */,
 				C55251471EF08005003C667A /* bin */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +81,7 @@
 		C55251501EF08005003C667A /* data */ = {
 			isa = PBXGroup;
 			children = (
+				C543A9FC1EF1CE4F005EDECC /* simpledata.txt */,
 				C55251511EF08005003C667A /* questions-phrases.txt */,
 				C55251591EF08005003C667A /* questions-words-syntax.txt */,
 				C55251521EF08005003C667A /* questions-words.txt */,
@@ -91,17 +93,10 @@
 			path = data;
 			sourceTree = "<group>";
 		};
-		C552515C1EF08005003C667A /* script-tools */ = {
-			isa = PBXGroup;
-			children = (
-				C552515D1EF08005003C667A /* tooling.py */,
-			);
-			path = "script-tools";
-			sourceTree = "<group>";
-		};
 		C552515E1EF08005003C667A /* scripts */ = {
 			isa = PBXGroup;
 			children = (
+				C552515D1EF08005003C667A /* tooling.py */,
 				C552515F1EF08005003C667A /* demo-analogy.sh */,
 				C55251601EF08005003C667A /* demo-classes.sh */,
 				C55251611EF08005003C667A /* demo-ngram.sh */,
@@ -109,6 +104,7 @@
 				C55251631EF08005003C667A /* demo-phrases.sh */,
 				C55251641EF08005003C667A /* demo-word-accuracy.sh */,
 				C55251651EF08005003C667A /* demo-word.sh */,
+				C543A9FD1EF1CE6B005EDECC /* demo-simple.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -307,6 +303,7 @@
 				C552516D1EF08046003C667A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

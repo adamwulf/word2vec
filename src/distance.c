@@ -42,8 +42,11 @@ int main(int argc, char **argv) {
         printf("Input file not found\n");
         return -1;
     }
+    // read in number of words
     fscanf(f, "%lld", &words);
+    // read in size of word vector
     fscanf(f, "%lld", &size);
+    // allocate vocabulary in memory to hold all words and vectors
     vocab = (char *)malloc((long long)words * max_w * sizeof(char));
     M = (float *)malloc((long long)words * (long long)size * sizeof(float));
     if (M == NULL) {

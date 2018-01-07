@@ -6,7 +6,7 @@ SRC_DIR=../src
 
 TEXT_DATA=$DATA_DIR/text8
 ZIPPED_TEXT_DATA="${TEXT_DATA}.zip"
-VECTOR_DATA=$DATA_DIR/text8-vector.bin
+VECTOR_DATA=$DATA_DIR/w2v_model
 
 pushd ${SRC_DIR} && make; popd
 
