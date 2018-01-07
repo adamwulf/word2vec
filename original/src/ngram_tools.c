@@ -38,7 +38,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 	int unexistCpt=0;
 	int gramCpt=0;
 
-	hashset = calloc(voc->vocab_hash_size,sizeof(int));
+	hashset = (int*) calloc(voc->vocab_hash_size,sizeof(int));
 	real wordVec[layer1_size];
 
 	for(i=0;i<voc->vocab_hash_size;i++)

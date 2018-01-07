@@ -65,7 +65,7 @@ threadParameters * CreateParametersStruct(vocabulary* voc,
 void *TrainCBOWModelThread(void *arg) {
 
 	/*Get Parameters*/
-	threadParameters *params = arg;
+	threadParameters *params = (threadParameters *)arg;
 
 	vocabulary *voc = params->voc;	 //shared
 	int id = params->threadNumber;
@@ -302,7 +302,7 @@ void *TrainCBOWModelThread(void *arg) {
 void *TrainCBOWModelThreadGram(void *arg) {
 
 	/*Get Parameters*/
-	threadParameters *params = arg;
+	threadParameters *params = (threadParameters *)arg;
 
 	vocabulary *voc = params->voc;	 //shared
 	int id = params->threadNumber;
@@ -579,7 +579,7 @@ void *TrainCBOWModelThreadGram(void *arg) {
 void *TrainSKIPModelThread(void *arg) {
 
 	/*Get Parameters*/
-	threadParameters *params = arg;
+	threadParameters *params = (threadParameters *)arg;
 
 	vocabulary *voc = params->voc;	 //shared
 	int id = params->threadNumber;
@@ -805,7 +805,7 @@ void *TrainSKIPModelThread(void *arg) {
 void *TrainSKIPModelThreadGram(void *arg) {
 
 	/*Get Parameters*/
-	threadParameters *params = arg;
+	threadParameters *params = (threadParameters *)arg;
 
 	vocabulary *voc = params->voc;	 //shared
 	int id = params->threadNumber;

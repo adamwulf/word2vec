@@ -7,6 +7,8 @@ Original from https://code.google.com/p/word2vec/
 
 Tools for computing distributed represention of words (and Grams) included from the [cedias](https://github.com/cedias/word2vec) repo.
 
+Obj-C framework also uses work from the [alexsosn](https://github.com/alexsosn/Word2Vec-iOS) repo.
+
 - ***makefile and some source has been modified for Mac OS X compilation*** See https://code.google.com/p/word2vec/issues/detail?id=1#c5
 - ***memory patch for word2vec has been applied*** See https://code.google.com/p/word2vec/issues/detail?id=2
 - Project file layout altered
