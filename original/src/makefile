@@ -14,8 +14,8 @@ trainingThread.o : trainingThread.c trainingThread.h
 	$(CC) -c trainingThread.c $(CFLAGS)
 word2gram : word2gram.c vocab.o ngram_tools.o trainingThread.o
 	$(CC) word2gram.c vocab.o ngram_tools.o trainingThread.o -o ${BIN_DIR}/word2gram $(CFLAGS)
-word2vec : word2vec.c vocab.o ngram_tools.o trainingThread.o
-	$(CC) word2vec.c vocab.o ngram_tools.o trainingThread.o -o ${BIN_DIR}/word2vec $(CFLAGS)
+word2vec : word2vec.c word2vec-main.c vocab.o ngram_tools.o trainingThread.o
+	$(CC) word2vec.c word2vec-main.c vocab.o ngram_tools.o trainingThread.o -o ${BIN_DIR}/word2vec $(CFLAGS)
 word2phrase : word2phrase.c
 	$(CC) word2phrase.c -o ${BIN_DIR}/word2phrase $(CFLAGS)
 distance : distance.c

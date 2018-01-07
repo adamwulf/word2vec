@@ -6,20 +6,35 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <Word2Vec/Word2Vec.h>
 
 @interface Word2VecTests : XCTestCase
 
 @end
 
-@implementation Word2VecTests
+@implementation Word2VecTests{
+    Word2Vec* model;
+}
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    model = [[Word2Vec alloc] init];
+    NSURL* binURL = [[NSBundle mainBundle] URLForResource:@"out.bin" withExtension:nil];
+    [model setOutputFile:binURL];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    NSArray<NSString *> * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
+    NSString* documentsDirectory = paths[0];
+    NSURL *url = [[NSURL fileURLWithPath:documentsDirectory] URLByAppendingPathComponent:@"out.bin"];
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+    if(exists){
+        @try{
+            [[NSFileManager defaultManager] removeItemAtPath:[url path] error:nil];
+        }@catch(id e){
+            // noop
+        }
+    }
     [super tearDown];
 }
 

@@ -9,6 +9,9 @@
 /*Inits a vocabulary*/
 vocabulary* InitVocabulary(int vocab_hash_size, int vocab_max_size){
 	int i;
+    
+    // note: vocab_max_size is only its initial size.
+    // the max may be increased inside of AddWordToVocab()
 
 	vocabulary* voc = (vocabulary*) malloc(sizeof(vocabulary));
 	if(voc == NULL){

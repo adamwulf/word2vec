@@ -101,6 +101,7 @@ void gramVocToWordVec(vocabulary* voc, real* syn0,int max_string, int layer1_siz
 	}
 	fprintf(fo, "\n");
 
+
 	hash = GetWordHash(voc,"</s>");
 	hashset[hash] = 1;
 	

@@ -11,6 +11,9 @@
 		C5C903512001E6AB00F5B973 /* Word2VecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C903502001E6AB00F5B973 /* Word2VecTests.m */; };
 		C5C903532001E6AB00F5B973 /* Word2Vec.h in Headers */ = {isa = PBXBuildFile; fileRef = C5C903452001E6AB00F5B973 /* Word2Vec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5C9035B2001E6CC00F5B973 /* Word2Vec.mm in Sources */ = {isa = PBXBuildFile; fileRef = C5C9035A2001E6CC00F5B973 /* Word2Vec.mm */; };
+		C5C903612001EB7F00F5B973 /* out.bin in Resources */ = {isa = PBXBuildFile; fileRef = C5C9035E2001EB7F00F5B973 /* out.bin */; };
+		C5C903622001EB7F00F5B973 /* pg2701.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5C9035F2001EB7F00F5B973 /* pg2701.txt */; };
+		C5C903632001EB7F00F5B973 /* text8 in Resources */ = {isa = PBXBuildFile; fileRef = C5C903602001EB7F00F5B973 /* text8 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,11 @@
 		C5C903502001E6AB00F5B973 /* Word2VecTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Word2VecTests.m; sourceTree = "<group>"; };
 		C5C903522001E6AB00F5B973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5C9035A2001E6CC00F5B973 /* Word2Vec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Word2Vec.mm; sourceTree = "<group>"; };
+		C5C9035E2001EB7F00F5B973 /* out.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = out.bin; sourceTree = "<group>"; };
+		C5C9035F2001EB7F00F5B973 /* pg2701.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pg2701.txt; sourceTree = "<group>"; };
+		C5C903602001EB7F00F5B973 /* text8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text8; sourceTree = "<group>"; };
+		C5C903642001F44A00F5B973 /* word2vec-main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "word2vec-main.c"; sourceTree = "<group>"; };
+		C5C903652001F64F00F5B973 /* word2vec-inc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "word2vec-inc.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +179,9 @@
 				C55251791EF0806F003C667A /* word-analogy.c */,
 				C552517A1EF0806F003C667A /* word2gram.c */,
 				C552517B1EF0806F003C667A /* word2phrase.c */,
+				C5C903652001F64F00F5B973 /* word2vec-inc.h */,
 				C552517C1EF0806F003C667A /* word2vec.c */,
+				C5C903642001F44A00F5B973 /* word2vec-main.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -221,10 +231,21 @@
 		C5C9034F2001E6AB00F5B973 /* Word2VecTests */ = {
 			isa = PBXGroup;
 			children = (
+				C5C9035D2001EB7F00F5B973 /* resources */,
 				C5C903502001E6AB00F5B973 /* Word2VecTests.m */,
 				C5C903522001E6AB00F5B973 /* Info.plist */,
 			);
 			path = Word2VecTests;
+			sourceTree = "<group>";
+		};
+		C5C9035D2001EB7F00F5B973 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5C9035E2001EB7F00F5B973 /* out.bin */,
+				C5C9035F2001EB7F00F5B973 /* pg2701.txt */,
+				C5C903602001EB7F00F5B973 /* text8 */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +269,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = /Users/adamwulf/Documents/Code/kiwi/word2vec/src;
+			buildWorkingDirectory = /Users/adamwulf/Documents/Code/kiwi/src/submodules/word2vec/original/src;
 			dependencies = (
 			);
 			name = word2vec;
@@ -300,7 +321,7 @@
 		C55251291EF07FDC003C667A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					C552516A1EF08046003C667A = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -350,6 +371,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C903632001EB7F00F5B973 /* text8 in Resources */,
+				C5C903612001EB7F00F5B973 /* out.bin in Resources */,
+				C5C903622001EB7F00F5B973 /* pg2701.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +410,59 @@
 		C552512D1EF07FDC003C667A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 			};
 			name = Debug;
 		};
 		C552512E1EF07FDC003C667A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 			};
 			name = Release;
 		};
@@ -518,6 +589,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -596,6 +668,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;

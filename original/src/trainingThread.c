@@ -336,7 +336,7 @@ void *TrainCBOWModelThreadGram(void *arg) {
 
 
 
-	long long a, b, d, i, word, last_word, sentence_length = 0, sentence_position = 0;
+	long long a, b, d, i=0, word, last_word, sentence_length = 0, sentence_position = 0;
 	long long word_count = 0, last_word_count = 0, sen[MAX_SENTENCE_LENGTH + 1];
 	long long  l2, c, target, label;
 	unsigned long long next_random = (long long)id;
@@ -837,7 +837,7 @@ void *TrainSKIPModelThreadGram(void *arg) {
 	free(arg);
 
 
-	long long a, b, d, i, word, last_word, sentence_length = 0, sentence_position = 0;
+	long long a, b, d, i=0, word, last_word, sentence_length = 0, sentence_position = 0;
 	long long word_count = 0, last_word_count = 0, sen[MAX_SENTENCE_LENGTH + 1];
 	long long l1, l2, c, target, label;
 	unsigned long long next_random = (long long)id;
