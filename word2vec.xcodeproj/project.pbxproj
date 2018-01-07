@@ -75,10 +75,6 @@
 		C552517A1EF0806F003C667A /* word2gram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2gram.c; sourceTree = "<group>"; };
 		C552517B1EF0806F003C667A /* word2phrase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2phrase.c; sourceTree = "<group>"; };
 		C552517C1EF0806F003C667A /* word2vec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word2vec.c; sourceTree = "<group>"; };
-		C5C903002001DDE900F5B973 /* word2vec-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "word2vec-ios.h"; sourceTree = "<group>"; };
-		C5C903012001DDE900F5B973 /* distance-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "distance-ios.h"; sourceTree = "<group>"; };
-		C5C903022001DDE900F5B973 /* distance-ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "distance-ios.m"; sourceTree = "<group>"; };
-		C5C903032001DDE900F5B973 /* word2vec-ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "word2vec-ios.m"; sourceTree = "<group>"; };
 		C5C903432001E6AB00F5B973 /* Word2Vec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Word2Vec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C903452001E6AB00F5B973 /* Word2Vec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Word2Vec.h; sourceTree = "<group>"; };
 		C5C903462001E6AB00F5B973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,17 +189,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		C5C902FF2001DDDE00F5B973 /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				C5C903012001DDE900F5B973 /* distance-ios.h */,
-				C5C903022001DDE900F5B973 /* distance-ios.m */,
-				C5C903002001DDE900F5B973 /* word2vec-ios.h */,
-				C5C903032001DDE900F5B973 /* word2vec-ios.m */,
-			);
-			path = framework;
-			sourceTree = "<group>";
-		};
 		C5C9030A2001E61300F5B973 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +212,6 @@
 		C5C903442001E6AB00F5B973 /* Word2Vec */ = {
 			isa = PBXGroup;
 			children = (
-				C5C902FF2001DDDE00F5B973 /* framework */,
 				C5C903452001E6AB00F5B973 /* Word2Vec.h */,
 				C5C9035A2001E6CC00F5B973 /* Word2Vec.mm */,
 				C5C903462001E6AB00F5B973 /* Info.plist */,

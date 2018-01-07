@@ -147,7 +147,7 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     a = 0;
     while (1) {
         st1[a] = [word cStringUsingEncoding:NSUTF8StringEncoding][a];
-        if ((st1[a] == '\n') || (a >= maxStringLength - 1)) {
+        if ((st1[a] == '\0') || (st1[a] == '\n') || (a >= maxStringLength - 1)) {
             st1[a] = 0;
             break;
         }
@@ -253,7 +253,7 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     a = 0;
     while (1) {
         st1[a] = [phrase cStringUsingEncoding:NSUTF8StringEncoding][a];
-        if ((st1[a] == '\n') || (a >= maxStringLength - 1)) {
+        if ((st1[a] == '\0') || (st1[a] == '\n') || (a >= maxStringLength - 1)) {
             st1[a] = 0;
             break;
         }
