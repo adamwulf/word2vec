@@ -26,6 +26,7 @@
 #include <string.h>
 #include <math.h>
 #include <pthread.h>
+#include <malloc.h>
 
 #include "vocab.h"
 #include "trainingThread.h"

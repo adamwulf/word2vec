@@ -17,6 +17,7 @@
 #include <string.h>
 #include <math.h>
 #include <pthread.h>
+#include <malloc.h>
 
 #define MAX_STRING 60
 
