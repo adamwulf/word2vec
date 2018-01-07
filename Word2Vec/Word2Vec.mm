@@ -34,6 +34,30 @@ extern "C" {
     return self;
 }
 
+-(BOOL) train{
+    if(![self trainFile] || ![self outputFile]){
+        @throw [NSException exceptionWithName:@"Word2VecException" reason:@"Both trainFile and outputFile are required." userInfo:nil];
+    }
+    
+    return [Word2Vec trainwithCorpusFile:[self trainFile]
+                              outputFile:[self outputFile]
+                           saveVocabFile:[self saveVocabFile]
+                           readVocabFile:[self readVocabFile]
+                          wordVectorSize:[self wordVectorSize]
+                                   debug:[self debug]
+                            saveToBinary:[self saveToBinary]
+                    continuousBagOfWords:[self continuousBagOfWords]
+                    startingLearningRate:[self startingLearningRate]
+                            windowLength:[self windowLength]
+                wordsOccurrenceThreshold:[self wordsOccurrenceThreshold]
+                     hierarchicalSoftmax:[self hierarchicalSoftmax]
+                        negativeExamples:[self negativeExamples]
+                                 threads:[self threads]
+                      trainingIterations:[self trainingIterations]
+                                minCount:[self minCount]
+                           classesNumber:[self classesNumber]];
+}
+
 #pragma mark - main
 
 + (BOOL)trainwithCorpusFile:(NSURL * _Nonnull) trainFile
