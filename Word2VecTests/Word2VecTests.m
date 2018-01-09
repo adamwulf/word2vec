@@ -110,4 +110,34 @@
     XCTAssertEqualObjects([[result allKeys] firstObject], @"eat");
 }
 
+-(void) testSimilarity {
+    NSDictionary* result = [model wordSimilarity:@"green red purple turtle"];
+    NSString* leastSimilar = nil;
+    CGFloat minSimilar = 1;
+    
+    for (NSString* key in [result allKeys]) {
+        if([result[key] floatValue] < minSimilar){
+            leastSimilar = key;
+            minSimilar = [result[key] floatValue];
+        }
+    }
+    
+    XCTAssertEqualObjects(leastSimilar, @"turtle");
+}
+
+-(void) testSimilarity2 {
+    NSDictionary* result = [model wordSimilarity:@"king castle sword car"];
+    NSString* leastSimilar = nil;
+    CGFloat minSimilar = 1;
+    
+    for (NSString* key in [result allKeys]) {
+        if([result[key] floatValue] < minSimilar){
+            leastSimilar = key;
+            minSimilar = [result[key] floatValue];
+        }
+    }
+    
+    XCTAssertEqualObjects(leastSimilar, @"car");
+}
+
 @end

@@ -135,7 +135,7 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     char st1[maxStringLength];
     char *bestWords[numberToShow];
     char st[100][maxStringLength];
-    float dist, len, bestDistances[numberToShow], vec[maxStringLength];
+    float dist, len, bestDistances[numberToShow], vec[self.size.longLongValue];
     long long a, b, c, d, cn, bi[100];
     
     for (a = 0; a < numberToShow; a++) {
@@ -242,7 +242,7 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     char st1[maxStringLength];
     char *bestWords[numberToShow];
     char st[100][maxStringLength];
-    float dist, len, bestDistances[numberToShow], vec[maxStringLength];
+    float dist, len, bestDistances[numberToShow], vec[self.size.longLongValue];
     long long a, b, c, d, cn, bi[100];
     
     for (a = 0; a < numberToShow; a++) {
@@ -330,6 +330,96 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     }
     
     free(*bestWords);
+    return result;
+}
+
+- (NSDictionary <NSString *, NSNumber *>  * _Nullable)wordSimilarity:(NSString * _Nonnull) phrase {
+    [self loadWordVectors];
+    
+    numberToShow = 1;
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    char full_input_string[maxStringLength];
+    char input_words[100][maxStringLength];
+    float dist, len, vec[self.size.longLongValue];
+    long long i, b, c, d, word_count, input_word_index[100];
+    
+    i = 0;
+    while (1) {
+        full_input_string[i] = [phrase cStringUsingEncoding:NSUTF8StringEncoding][i];
+        if ((full_input_string[i] == '\0') || (full_input_string[i] == '\n') || (i >= maxStringLength - 1)) {
+            full_input_string[i] = 0;
+            break;
+        }
+        i++;
+    }
+    word_count = 0;
+    b = 0;
+    c = 0;
+    while (1) {
+        input_words[word_count][b] = full_input_string[c];
+        b++;
+        c++;
+        input_words[word_count][b] = 0;
+        if (full_input_string[c] == 0) break;
+        if (full_input_string[c] == ' ') {
+            word_count++;
+            b = 0;
+            c++;
+        }
+    }
+    word_count++;
+    
+    // initialize our distances to 0 for all our input words
+    float bestDistances[word_count];
+    for (i = 0; i < word_count; i++) bestDistances[i] = 0;
+
+    // iterate over all our vocabulary to find our input word's indexes in our vocab
+    long long countInVocab = self.wordsTotalNum.longLongValue;
+    
+    for (i = 0; i < word_count; i++) {
+        for (b = 0; b < countInVocab; b++){
+            if (!strcmp(&vocab[b * entryMaxLength], input_words[i])){
+                break;
+            }
+        }
+        if (b == countInVocab) b = 0;
+        input_word_index[i] = b;
+        if (b == 0) {
+            NSLog(@"Out of dictionary word!\n");
+            break;
+        }
+    }
+    
+    long long size = self.size.longLongValue;
+    
+    // initialize to all zeroes
+    for (i = 0; i < size; i++) vec[i] = 0;
+    
+    // next, add the vectors of all the input words
+    for (b = 0; b < word_count; b++) {
+        for (i = 0; i < size; i++){
+            vec[i] += M[i + input_word_index[b] * size];
+        }
+    }
+    
+    // next, normalize it so its length is 1
+    len = 0;
+    for (i = 0; i < size; i++) len += vec[i] * vec[i];
+    len = sqrt(len);
+    for (i = 0; i < size; i++) vec[i] /= len;
+    
+    // now, iterate over all input words, and add their distances to our output
+    for (i = 0; i < word_count; i++) bestDistances[i] = 0;
+    for (c = 0; c < word_count; c++) {
+        dist = 0;
+        for (i = 0; i < size; i++) dist += vec[i] * M[i + input_word_index[c] * size];
+        bestDistances[c] = dist;
+    }
+    
+    for (i = 0; i < word_count; i++) {
+        result[[NSString stringWithCString:input_words[i] encoding:NSUTF8StringEncoding]] = @(bestDistances[i]);
+    }
+    
     return result;
 }
 

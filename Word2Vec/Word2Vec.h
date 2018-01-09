@@ -47,4 +47,6 @@ FOUNDATION_EXPORT const unsigned char Word2VecVersionString[];
 - (NSDictionary <NSString *, NSNumber *>  * _Nullable)analogyToPhrase:(NSString * _Nonnull) phrase
                                                       numberOfClosest:(NSNumber * _Nullable) numberOfClosest;
 
+- (NSDictionary <NSString *, NSNumber *>  * _Nullable)wordSimilarity:(NSString * _Nonnull) phrase;
+
 @end
