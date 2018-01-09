@@ -152,4 +152,34 @@
     XCTAssertLessThan([[[result allValues] firstObject] floatValue], .8);
 }
 
+-(void) testSimilarity5 {
+    NSDictionary* result = [model wordSimilarity:@"boat ship captain sail ocean finance"];
+    NSString* leastSimilar = nil;
+    CGFloat minSimilar = 1;
+    
+    for (NSString* key in [result allKeys]) {
+        if([result[key] floatValue] < minSimilar){
+            leastSimilar = key;
+            minSimilar = [result[key] floatValue];
+        }
+    }
+    
+    XCTAssertEqualObjects(leastSimilar, @"finance");
+}
+
+-(void) testSimilarity6 {
+    NSDictionary* result = [model wordSimilarity:@"boat ship captain sail car"];
+    NSString* leastSimilar = nil;
+    CGFloat minSimilar = 1;
+    
+    for (NSString* key in [result allKeys]) {
+        if([result[key] floatValue] < minSimilar){
+            leastSimilar = key;
+            minSimilar = [result[key] floatValue];
+        }
+    }
+    
+    XCTAssertEqualObjects(leastSimilar, @"car");
+}
+
 @end
