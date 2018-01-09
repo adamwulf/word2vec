@@ -340,8 +340,8 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     char full_input_string[maxStringLength];
     char input_words[100][maxStringLength];
-    float dist, len, vec[self.size.longLongValue];
-    long long i, b, c, d, word_count, input_word_index[100];
+    float dist, vec[self.size.longLongValue];
+    long long i, b, c, word_count, input_word_index[100];
     
     i = 0;
     while (1) {
@@ -379,10 +379,11 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     for (i = 0; i < word_count; i++) {
         for (b = 0; b < countInVocab; b++){
             if (!strcmp(&vocab[b * entryMaxLength], input_words[i])){
+                // we found the index of the word i is b in our vocab
                 break;
             }
         }
-        if (b == countInVocab) b = 0;
+        if (b == countInVocab) b = 0; // we iterated over our entire vocab w/o finding it
         input_word_index[i] = b;
         if (b == 0) {
             NSLog(@"Out of dictionary word!\n");
@@ -393,26 +394,21 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     long long size = self.size.longLongValue;
     
     // initialize to all zeroes
-    for (i = 0; i < size; i++) vec[i] = 0;
+    [self zeroVector:vec];
     
     // next, add the vectors of all the input words
     for (b = 0; b < word_count; b++) {
-        for (i = 0; i < size; i++){
-            vec[i] += M[i + input_word_index[b] * size];
-        }
+        [self sumVector:vec withVector:&M[input_word_index[b] * size]];
     }
     
     // next, normalize it so its length is 1
-    len = 0;
-    for (i = 0; i < size; i++) len += vec[i] * vec[i];
-    len = sqrt(len);
-    for (i = 0; i < size; i++) vec[i] /= len;
+    [self normalizeVector:vec];
     
     // now, iterate over all input words, and add their distances to our output
     for (i = 0; i < word_count; i++) bestDistances[i] = 0;
     for (c = 0; c < word_count; c++) {
         dist = 0;
-        for (i = 0; i < size; i++) dist += vec[i] * M[i + input_word_index[c] * size];
+        for (i = 0; i < size; i++) dist += vec[i] * M[i + input_word_index[c] * size]; // since our lengths are 1, we only need to multiply
         bestDistances[c] = dist;
     }
     
@@ -421,6 +417,30 @@ const long long entryMaxLength = 50;              // max length of vocabulary en
     }
     
     return result;
+}
+
+// normalize the input vector of size self.size.longLongValue
+-(void) sumVector:(float*)vec1 withVector:(float*)vec2{
+    long long i;
+    long long size = self.size.longLongValue;
+    for (i = 0; i < size; i++){
+        vec1[i] += vec2[i];
+    }
+}
+
+-(void) zeroVector:(float*)vec{
+    long long i;
+    long long size = self.size.longLongValue;
+    for (i = 0; i < size; i++) vec[i] = 0;
+}
+
+-(void) normalizeVector:(float*)vec{
+    float len = 0;
+    long long i;
+    long long size = self.size.longLongValue;
+    for (i = 0; i < size; i++) len += vec[i] * vec[i];
+    len = sqrt(len);
+    for (i = 0; i < size; i++) vec[i] /= len;
 }
 
 - (void)dealloc

@@ -56,7 +56,7 @@
     XCTAssertTrue(exists);
 }
 
--(void) testPerformane {
+-(void) testPerformance {
     [self measureBlock:^{
         NSString *init_word = @"bird";
         NSArray<NSString*>* acc = @[init_word];
