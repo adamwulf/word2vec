@@ -140,4 +140,16 @@
     XCTAssertEqualObjects(leastSimilar, @"car");
 }
 
+-(void) testSimilarity3 {
+    NSDictionary* result = [model wordSimilarity:@"arm leg"];
+    
+    XCTAssertGreaterThan([[[result allValues] firstObject] floatValue], .9);
+}
+
+-(void) testSimilarity4 {
+    NSDictionary* result = [model wordSimilarity:@"jupiter storefront"];
+    
+    XCTAssertLessThan([[[result allValues] firstObject] floatValue], .8);
+}
+
 @end
